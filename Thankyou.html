@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Thank You – PaperHub</title>
+  <style>
+    :root {
+      --primary: #1F3C88;
+      --primary-soft: #EBF1FF;
+      --accent: #FFB046;
+      --bg: #F5F5F7;
+      --text-dark: #111827;
+      --text-muted: #6B7280;
+      --radius-xl: 26px;
+      --shadow-soft: 0 18px 40px rgba(15, 23, 42, 0.12);
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: system-ui, sans-serif;
+      background: linear-gradient(135deg, #F9FAFB, #EEF2FF);
+      color: var(--text-dark);
+      line-height: 1.6;
+    }
+
+    a { text-decoration: none; color: inherit; }
+
+    .page {
+      max-width: 780px;
+      margin: 0 auto;
+      padding: 30px 16px 60px;
+    }
+
+    /* Simple nav */
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-bottom: 16px;
+    }
+
+    .nav-left {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .logo-icon {
+      width: 32px;
+      height: 32px;
+      border-radius: 11px;
+      background: radial-gradient(circle at 0 0, #FFB046, #1F3C88);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      box-shadow: 0 8px 20px rgba(15, 23, 42, 0.2);
+    }
+
+    .logo-icon::before {
+      content: "";
+      position: absolute;
+      width: 18px;
+      height: 21px;
+      border-radius: 4px;
+      background: #fff;
+      box-shadow: 0 0 0 1px rgba(31, 60, 136, 0.25);
+      transform: translateY(-1px);
+    }
+
+    .logo-icon::after {
+      content: "";
+      position: absolute;
+      width: 11px;
+      height: 1.5px;
+      background: #1F3C88;
+      border-radius: 999px;
+      transform: translate(-2px, -3px);
+      box-shadow: 0 4px 0 #1F3C88, 0 8px 0 #1F3C88;
+    }
+
+    .logo-text-main {
+      font-weight: 700;
+      letter-spacing: 0.02em;
+      font-size: 1rem;
+    }
+
+    .logo-text-main span { color: var(--accent); }
+
+    .logo-text-sub {
+      font-size: 0.72rem;
+      color: var(--text-muted);
+    }
+
+    .btn {
+      border-radius: 999px;
+      padding: 9px 18px;
+      border: none;
+      cursor: pointer;
+      font-size: 0.9rem;
+      font-weight: 500;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: 0.15s ease;
+    }
+
+    .btn-primary {
+      background: var(--primary);
+      color: #fff;
+      box-shadow: 0 14px 30px rgba(31, 60, 136, 0.45);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-1px);
+      background: #182e66;
+    }
+
+    .btn-ghost {
+      background: transparent;
+      border: 1px solid rgba(148, 163, 184, 0.6);
+      color: var(--text-muted);
+    }
+
+    .btn-ghost:hover {
+      background: rgba(15, 23, 42, 0.03);
+      transform: translateY(-1px);
+    }
+
+    .card {
+      margin-top: 30px;
+      background: #fff;
+      border-radius: var(--radius-xl);
+      padding: 26px 22px;
+      text-align: center;
+      box-shadow: var(--shadow-soft);
+    }
+
+    .emoji {
+      font-size: 2.3rem;
+      margin-bottom: 10px;
+    }
+
+    .title {
+      font-size: 1.5rem;
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+
+    .subtitle {
+      font-size: 0.92rem;
+      color: var(--text-muted);
+      max-width: 520px;
+      margin: 0 auto 14px;
+    }
+
+    .info-grid {
+      margin-top: 18px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+      gap: 12px;
+      text-align: left;
+      font-size: 0.82rem;
+      color: var(--text-muted);
+    }
+
+    .info-item {
+      background: #F9FAFB;
+      padding: 10px 12px;
+      border-radius: 14px;
+      border: 1px dashed rgba(148, 163, 184, 0.7);
+    }
+
+    .info-title {
+      font-weight: 600;
+      margin-bottom: 4px;
+      font-size: 0.85rem;
+      color: var(--text-dark);
+    }
+
+    .actions {
+      margin-top: 20px;
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .footer {
+      margin-top: 30px;
+      padding-top: 12px;
+      border-top: 1px solid rgba(209, 213, 219, 0.8);
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="page">
+
+    <!-- Navbar -->
+    <header class="nav">
+      <div class="nav-left">
+        <div class="logo-icon"></div>
+        <div>
+          <div class="logo-text-main">Paper<span>Hub</span></div>
+          <div class="logo-text-sub">Student Research Journals Network</div>
+        </div>
+      </div>
+
+      <a href="index.html" class="btn btn-ghost">← Back to home</a>
+    </header>
+
+    <!-- Thank You Card -->
+    <main>
+      <section class="card">
+        <div class="emoji">✅</div>
+        <h1 class="title">Your submission has been received</h1>
+
+        <p class="subtitle">
+          Thank you for submitting your paper to PaperHub. Our editorial team will review your manuscript
+          and get back to you over email/WhatsApp with the decision and next steps.
+        </p>
+
+        <div class="info-grid">
+          <div class="info-item">
+            <div class="info-title">What happens now?</div>
+            <p>We do an initial screening for basic quality, plagiarism and fit with the selected journal.</p>
+          </div>
+
+          <div class="info-item">
+            <div class="info-title">Decision timeline</div>
+            <p>Most authors receive a decision (accept / revise / reject) in about 5–7 working days.</p>
+          </div>
+
+          <div class="info-item">
+            <div class="info-title">If accepted</div>
+            <p>You’ll get payment details (₹300 publication fee), issue details, and e-certificate information.</p>
+          </div>
+        </div>
+
+        <div class="actions">
+          <a href="index.html" class="btn btn-primary">Go back to homepage</a>
+          <a href="Submit.html" class="btn btn-ghost">Submit another paper</a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div>© PaperHub – Student Research Journals Network.</div>
+      <div>
+        <a href="index.html">Home</a> ·
+        <a href="#">Publication ethics</a> ·
+        <a href="#">Contact</a>
+      </div>
+    </footer>
+
+  </div>
+</body>
+</html>
